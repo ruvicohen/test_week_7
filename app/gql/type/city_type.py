@@ -1,7 +1,6 @@
 import graphene
 from graphene import ObjectType, Int, String
 
-
 class CityType(ObjectType):
     city_id = Int()
     city_name = String()

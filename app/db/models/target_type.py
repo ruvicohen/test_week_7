@@ -1,8 +1,6 @@
 from sqlalchemy import Integer, String, Column
 from sqlalchemy.orm import relationship
-
 from app.db.models import Base
-
 
 class TargetType(Base):
     __tablename__ = "targettypes"
@@ -10,4 +8,3 @@ class TargetType(Base):
     target_type_name = Column(String)
 
     targets = relationship('Target',back_populates='target_type')
-

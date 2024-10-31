@@ -1,9 +1,6 @@
 import graphene
 from graphene import ObjectType, Int, String
 
-from app.db.models.city import City
-
-
 class TargetType(ObjectType):
     target_id = Int()
     target_industry = String()

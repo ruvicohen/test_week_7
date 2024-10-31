@@ -1,8 +1,6 @@
 from graphene import  Int, String, Field, Mutation
-
 from app.gql.type.target_type import TargetType
 from app.repository.target_repository import add_target
-
 
 class AddTarget(Mutation):
     class Arguments:

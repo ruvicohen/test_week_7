@@ -1,6 +1,5 @@
 from graphene import ObjectType, Int, Date, Float
 
-
 class MissionType(ObjectType):
     mission_id = Int()
     mission_date = Date()

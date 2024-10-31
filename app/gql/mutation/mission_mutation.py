@@ -2,7 +2,6 @@ from graphene import Mutation, Float, Date, Int, Field
 from app.gql.type.mission_type import MissionType
 from app.repository.mission_repository import add_mission, update_mission, delete_mission
 
-
 class AddMission(Mutation):
     class Arguments:
         mission_date = Date()
@@ -49,5 +48,3 @@ class DeleteMission(Mutation):
     def mutate(root, info, id):
         mission = delete_mission(id).value_or(None)
         return DeleteMission(mission=mission)
-
-

@@ -3,7 +3,6 @@ from app.gql.mutation.mission_mutation import AddMission, UpdateMission, DeleteM
 from app.gql.mutation.target_mutation import AddTarget
 from app.gql.query.mission_query import MissionQuery
 
-
 class Mutations(ObjectType):
     add_mission = AddMission.Field()
     add_target = AddTarget.Field()
