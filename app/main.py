@@ -16,5 +16,4 @@ app = Flask(__name__)
 
 
 if __name__ == '__main__':
-    init_db()
     app.run(port=5000, host='0.0.0.0')

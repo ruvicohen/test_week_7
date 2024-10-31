@@ -10,10 +10,10 @@ class Target(Base):
     mission_id = Column(Integer, ForeignKey('missions.mission_id'))
     target_industry = Column(String)
     city_id = Column(String, ForeignKey('cities.city_id'))
-    target_type_id = Column(String, ForeignKey('target_types.target_type_id'))
+    target_type_id = Column(String, ForeignKey('targettypes.target_type_id'))
     target_priority = Column(String)
 
     city = relationship('City',back_populates='targets')
-    target_type = relationship('TargetType')
-    mission = relationship('Mission')
+    target_type = relationship('TargetType', back_populates='targets')
+    mission = relationship('Mission', cascade="all, delete-orphan")
 
