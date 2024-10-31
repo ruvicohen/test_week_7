@@ -3,17 +3,19 @@ from returns.maybe import Maybe
 from returns.result import Success, Result, Failure
 from sqlalchemy import func
 from app.db.database import session_maker
-from app.db.models import Mission
+from app.db.models import Mission, City
 from app.db.models.target import Target
 
 def get_targets() -> List[Target]:
     with session_maker() as session:
         return session.query(Target).all()
 
-def get_average_of_targets_value(column_name: str) -> Maybe[float]:
+def get_average_of_targets_by_city(city_name: str) -> Maybe[float]:
     with session_maker() as session:
-        average_value = session.query(func.avg(getattr(Target, column_name))).scalar()
-        return average_value
+        average_value = (session.query(func.avg(Target.target_priority))
+                         .join(City, City.city_id == Target.city_id)
+                         .filter(City.city_name == city_name).scalar())
+        return Maybe.from_optional(average_value)
 
 def add_target(**kwargs) -> Result[Target, str]:
     with session_maker() as session:
@@ -30,7 +32,7 @@ def add_target(**kwargs) -> Result[Target, str]:
             return Success(target)
         except Exception as e:
             session.rollback()
-            raise Failure(str(e))
+            return Failure(str(e))
 
 def delete_target_by_mission_id(mission_id: int) -> Result[int, str]:
     with session_maker() as session:
@@ -40,4 +42,4 @@ def delete_target_by_mission_id(mission_id: int) -> Result[int, str]:
             return Success(mission_id)
         except Exception as e:
             session.rollback()
-            raise Failure(str(e))
+            return Failure(str(e))

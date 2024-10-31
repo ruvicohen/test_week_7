@@ -1,7 +1,8 @@
 from graphene import ObjectType, Date, List, String, Int, Field
 from app.gql.type.mission_type import MissionType
 from app.repository.mission_repository import get_mission_by_id, get_missions_by_date, get_missions_by_country, \
-    get_missions_by_target_industry, find_mission_by_target_type
+    get_missions_by_target_industry, find_mission_by_target_type, get_missions_by_date_and_target_type
+
 
 class MissionQuery(ObjectType):
     mission_by_id = Field(MissionType, id=Int())
@@ -9,6 +10,7 @@ class MissionQuery(ObjectType):
     missions_by_country = List(MissionType, country=String())
     missions_by_target_industry = List(MissionType, target_industry=String())
     missions_by_type_name = List(MissionType, type_name=String())
+    missions_by_date_and_type_target = List(MissionType, date=Date(), type_name=String())
 
     @staticmethod
     def resolve_mission_by_id(root, info, id):
@@ -29,3 +31,8 @@ class MissionQuery(ObjectType):
     @staticmethod
     def resolve_missions_by_type_name(root, info, type_name):
         return find_mission_by_target_type(type_name)
+
+    @staticmethod
+    def resolve_missions_by_date_and_type_target(root, info, date, type_name):
+        statistics_by_date = get_missions_by_date_and_target_type(date, type_name)
+        return statistics_by_date
