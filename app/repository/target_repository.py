@@ -1,4 +1,5 @@
 from typing import List
+from returns.maybe import Maybe
 from returns.result import Success, Result, Failure
 from sqlalchemy import func
 from app.db.database import session_maker
@@ -8,6 +9,11 @@ from app.db.models.target import Target
 def get_targets() -> List[Target]:
     with session_maker() as session:
         return session.query(Target).all()
+
+def get_average_of_targets_value(column_name: str) -> Maybe[float]:
+    with session_maker() as session:
+        average_value = session.query(func.avg(getattr(Target, column_name))).scalar()
+        return average_value
 
 def add_target(**kwargs) -> Result[Target, str]:
     with session_maker() as session:

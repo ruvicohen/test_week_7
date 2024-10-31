@@ -1,6 +1,7 @@
 from graphene import ObjectType, Schema
 from app.gql.mutation.mission_mutation import AddMission, UpdateMission, DeleteMission
 from app.gql.mutation.target_mutation import AddTarget
+from app.gql.query.city_query import CityQuery
 from app.gql.query.mission_query import MissionQuery
 
 class Mutations(ObjectType):
@@ -9,7 +10,7 @@ class Mutations(ObjectType):
     update_mission = UpdateMission.Field()
     delete_mission = DeleteMission.Field()
 
-class Query(MissionQuery):
+class Query(MissionQuery, CityQuery):
     pass
 
 schema = Schema(query=Query, mutation=Mutations)
