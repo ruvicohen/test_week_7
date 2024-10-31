@@ -6,7 +6,7 @@ from app.db.models import Base
 
 class Target(Base):
     __tablename__ = 'targets'
-    target_id = Column(primary_key=True, autoincrement=True)
+    target_id = Column(primary_key=True)
     mission_id = Column(Integer, ForeignKey('missions.mission_id'))
     target_industry = Column(String)
     city_id = Column(String, ForeignKey('cities.city_id'))
@@ -15,5 +15,5 @@ class Target(Base):
 
     city = relationship('City',back_populates='targets')
     target_type = relationship('TargetType', back_populates='targets')
-    mission = relationship('Mission', cascade="all, delete-orphan")
+    mission = relationship('Mission')
 

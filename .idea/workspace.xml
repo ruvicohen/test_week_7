@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b89b55b-e396-4425-9aed-f2e810b26c42" name="Changes" comment="init project with models and queries and types">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0b89b55b-e396-4425-9aed-f2e810b26c42" name="Changes" comment="add mutations">
+      <change beforePath="$PROJECT_DIR$/app/db/models/mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/mission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/target.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/target.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gql/mutation/mission_mutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/mutation/mission_mutation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gql/mutation/target_mutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/mutation/target_mutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gql/query/mission_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/query/mission_query.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gql/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gql/type/mission_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/type/mission_type.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repository/mission_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/mission_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/target_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/target_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,12 +128,21 @@
       <option name="project" value="LOCAL" />
       <updated>1730369062478</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add mutations">
+      <option name="closed" value="true" />
+      <created>1730374200810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730374200810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project with models and base repository" />
     <MESSAGE value="init project with models and queries and types" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project with models and queries and types" />
+    <MESSAGE value="add mutations" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mutations" />
   </component>
 </project>
