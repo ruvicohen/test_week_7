@@ -4,14 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b89b55b-e396-4425-9aed-f2e810b26c42" name="Changes" comment="add mutations">
+    <list default="true" id="0b89b55b-e396-4425-9aed-f2e810b26c42" name="Changes" comment="add graphql func with mutations">
+      <change beforePath="$PROJECT_DIR$/app/db/models/city.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/city.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/country.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/country.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/models/mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/mission.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/models/target.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/target.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/target_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/target_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/mutation/city_mutation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/mutation/country_mutation.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gql/mutation/mission_mutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/mutation/mission_mutation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gql/mutation/target_mutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/mutation/target_mutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/mutation/target_type_mutation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/query/city_query.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/query/country_query.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/query/mission_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/query/mission_query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/query/target_query.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/query/target_type_query.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gql/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/type/city_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/type/city_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/type/country_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/type/country_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/type/mission_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/type/mission_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/type/target_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/type/target_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gql/type/target_type_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gql/type/target_type_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/city_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/city_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/country_repository.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repository/mission_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/mission_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repository/target_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/target_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/targettype_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,13 +158,30 @@
       <option name="project" value="LOCAL" />
       <updated>1730374200810</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add graphql func with mutations">
+      <option name="closed" value="true" />
+      <created>1730379611100</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730379611100</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add graphql func with mutations">
+      <option name="closed" value="true" />
+      <created>1730379623909</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730379623909</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project with models and base repository" />
     <MESSAGE value="init project with models and queries and types" />
     <MESSAGE value="add mutations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add mutations" />
+    <MESSAGE value="add graphql func with mutations" />
+    <option name="LAST_COMMIT_MESSAGE" value="add graphql func with mutations" />
   </component>
 </project>
