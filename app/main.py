@@ -1,18 +1,17 @@
 from flask import Flask
-
-from app.db.database import engine, init_db
-from app.db.models import Target, TargetType, City, Country, Mission
+from flask_graphql import GraphQLView
+from app.gql.schema import schema
 
 app = Flask(__name__)
 
-# app.add_url_rule(
-#     '/graphql',
-#     view_func=GraphQLView.as_view(
-#         'graphql',
-#         schema=schema,
-#         graphiql=True
-#     )
-# )
+app.add_url_rule(
+    '/graphql',
+    view_func=GraphQLView.as_view(
+        'graphql',
+        schema=schema,
+        graphiql=True
+    )
+)
 
 
 if __name__ == '__main__':

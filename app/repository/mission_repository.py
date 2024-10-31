@@ -1,3 +1,5 @@
+from returns.result import Success, Result, Failure
+
 from app.db.database import session_maker
 from app.db.models import Target, Country, City, TargetType
 from app.db.models.mission import Mission
@@ -47,6 +49,50 @@ def find_mission_by_target_type(target_type):
 # Mutations
 # 1. Add a new mission (with all details).
 # 2. Add a target (linked to a mission).
+def add_mission(**kwargs) -> Result[Mission, str]:
+    with session_maker() as session:
+        try:
+            mission = Mission(**kwargs)
+            session.add(mission)
+            session.commit()
+            session.refresh(mission)
+            return Success(mission)
+        except Exception as e:
+            session.rollback()
+            raise Failure(str(e))
 # 3. Add an attack result (linked to a mission).
+def add_target(**kwargs) -> Result[Target, str]:
+    with session_maker() as session:
+        try:
+            target = Target(**kwargs)
+            session.add(target)
+            session.commit()
+            session.refresh(target)
+            return Success(target)
+        except Exception as e:
+            session.rollback()
+            raise Failure(str(e))
+
+def update_mission(mission_id, **kwargs) -> Result[Mission, str]:
+    with session_maker() as session:
+        try:
+            session.query(Mission).filter(Mission.mission_id == mission_id).update(kwargs)
+            session.commit()
+            return Success(get_mission_by_id(mission_id))
+        except Exception as e:
+            session.rollback()
+            raise Failure(str(e))
 # 4. Update an attack result (can update any of the 5 fields listed above).
 # 5. Delete a mission (including all its links).
+def delete_mission(mission_id) -> Result[Mission, str]:
+    with session_maker() as session:
+        try:
+            session.query(Mission).filter(Mission.mission_id == mission_id).delete()
+            session.commit()
+            return Success(get_mission_by_id(mission_id))
+        except Exception as e:
+            session.rollback()
+            raise Failure(str(e))
+
+
+
